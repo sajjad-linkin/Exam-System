@@ -313,7 +313,7 @@ const DataTable = props => {
         //headcells---------------
         const headers=props.headcells
 
-        return ( <div className = { classes.root } >
+        return ( <div className = { classes.root }  >
             <Paper className = { classes.paper } >
              <
             TableContainer >
@@ -379,6 +379,7 @@ const DataTable = props => {
             }
             component = "div"
             labelRowsPerPage = "  تعداد در هر صفحه"
+            
             count = { rows.length }
             rowsPerPage = { rowsPerPage }
             page = { page }

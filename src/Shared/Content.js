@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import {Layout} from 'antd';
-import ColapseTable from './DataTable'
+import ColapseTable from './Tables/DataTable'
 import str from './Strings'
 import classes from './Content.module.css';
 import date from './jDate';
-import MainHeader from './MainHeader'
-
+import Test from '../Student/Components/ExamDuration/TestQuestion'
 class Content extends Component {
 
     
@@ -19,8 +18,9 @@ class Content extends Component {
                     <date></date>
                 </div> */}
 
-
+                {/* <Test choices={["a","b","c","d"]}/> */}
                 <ColapseTable headcells={str.STUDENTS_RECENT_EXAMS}  />
+
             </Content>
             
         )

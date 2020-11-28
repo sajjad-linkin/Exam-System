@@ -13,8 +13,6 @@
     z-index: 5;
 }
 
-@media (min-width: 768px) {
-    .main-header {
-        justify-content: center;
-    }
+.Clock{
+    margin-right: auto;
 }

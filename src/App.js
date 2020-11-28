@@ -4,12 +4,11 @@ import Clock from 'react-clock'
 
 import {Layout, Divider, Col, Row} from 'antd'
 import './App.css';
-import Header from './Component/Header'
-import Aside from './Component/Aside'
-import Content from './Component/Content'
-import  './Component/MainHeader.css'
-import Title from './Component/Title'
-import classes from './Component/Aside.module.css'
+import Header from './Shared/Header/Header'
+import Aside from './Shared/Sidebar/Aside'
+import Content from './Shared/Content'
+import Title from './Shared/ContentTitle/Title'
+import classes from './Shared/Sidebar/Aside.module.css'
 
 
 function App() {

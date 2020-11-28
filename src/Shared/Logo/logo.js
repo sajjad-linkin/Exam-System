@@ -1,7 +1,7 @@
 import React from 'react'
 import {Card} from 'antd'
 import './logo.css'
-import Logo from "../assets/pics/test.png"
+import Logo from "../../assets/pics/test.png"
 
 
 
