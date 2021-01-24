@@ -43,24 +43,57 @@ export default {
     EMPTY_FIELDS: 'کاربر گرامی لطفا فیلدهای اجباری را پر کنید',
     
     //======================== Table Headers ============================
-    STUDENTS_RECENT_EXAMS:[
+    PROFESSORS_RECENT_EXAMS:[
         { id: 'name', numeric: false, disablePadding: true, label: 'عنوان آزمون' },
-        { id: 'calories', numeric: true, disablePadding: false, label: 'نام درس' },
+        { id: 'calories', numeric: true, disablePadding: false, label: 'کد درس' },
         { id: 'fat', numeric: true, disablePadding: false, label: 'تاریخ برگزاری' },
         { id: 'carbs', numeric: true, disablePadding: false, label: 'وضعیت' },
-        { id: 'protein', numeric: true, disablePadding: false, label: 'نمره' },
+        { id: 'protein', numeric: true, disablePadding: false, label: 'مدت برگزاری' },
+        { id: 'protein', numeric: true, disablePadding: false, label: '' },
+
+    ],
+    STUDENTS_RECENT_EXAMS:[
+        { id: 'name', numeric: false, disablePadding: true, label: 'عنوان آزمون' },
+        { id: 'calories', numeric: true, disablePadding: false, label: 'کد درس' },
+        { id: 'fat', numeric: true, disablePadding: false, label: 'تاریخ برگزاری' },
+        { id: 'carbs', numeric: true, disablePadding: false, label: 'وضعیت' },
+        { id: 'protein', numeric: true, disablePadding: false, label: 'مدت برگزاری' },
+        
     ],
     STUDENTS_EXAMS_LIST:[
         { id: 'name', numeric: false, disablePadding: true, label: 'عنوان آزمون' },
         { id: 'fat', numeric: true, disablePadding: false, label: 'تاریخ برگزاری' },
         { id: 'carbs', numeric: true, disablePadding: false, label: 'وضعیت' },
-        { id: 'protein', numeric: true, disablePadding: false, label: 'نمره' },
+        { id: 'carbs', numeric: true, disablePadding: false, label: 'مدت برگزاری آزمون' },
+        { id: 'protein', numeric: true, disablePadding: false, label: '' },
+    ],
+    PROFESSORS_EXAMS_LIST:[
+        { id: 'name', numeric: false, disablePadding: true, label: 'عنوان آزمون' },
+        { id: 'fat', numeric: true, disablePadding: false, label: 'تاریخ برگزاری' },
+        { id: 'carbs', numeric: true, disablePadding: false, label: 'وضعیت' },
+        { id: 'carbs', numeric: true, disablePadding: false, label: 'مدت برگزاری آزمون' },
+        { id: 'protein', numeric: true, disablePadding: false, label: '' },
+    ],
+    PROFESSORS_EXAMS_STUDENTS_LIST:[
+        { id: 'protein', numeric: true, disablePadding: false, label: '' },
+        { id: 'name', numeric: false, disablePadding: true, label: 'نام دانشجو' },
+        { id: 'fat', numeric: true, disablePadding: false, label: 'شماره دانشجویی' },
+        { id: 'carbs', numeric: true, disablePadding: false, label: 'نمره' },
+        { id: 'protein', numeric: true, disablePadding: false, label: '' }
     ],
     STUDENTS_COURSES_LIST:[
         { id: 'name', numeric: false, disablePadding: true, label: 'نام درس' },
-        { id: 'calories', numeric: true, disablePadding: false, label: 'شعبه' },
+        { id: 'calories', numeric: true, disablePadding: false, label: 'کد درس' },
         { id: 'fat', numeric: true, disablePadding: false, label: '' },
         { id: 'carbs', numeric: true, disablePadding: false, label: '' },
         { id: 'protein', numeric: true, disablePadding: false, label: '' },
     ],
+    PROFESSORS_COURSES_LIST:[
+        { id: 'name', numeric: false, disablePadding: true, label: 'نام درس' },
+        { id: 'calories', numeric: true, disablePadding: false, label: 'کد درس' },
+        { id: 'fat', numeric: true, disablePadding: false, label: '' },
+        { id: 'carbs', numeric: true, disablePadding: false, label: '' },
+        { id: 'protein', numeric: true, disablePadding: false, label: '' },
+    ],
+    
 }

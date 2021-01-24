@@ -98,7 +98,7 @@ function stableSort(array, comparator) {
 
 
 function EnhancedTableHead(props) {
-    const { headcells, classes, onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
+    const { headers, classes, onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
     const createSortHandler = (property) => (event) => {
         onRequestSort(event, property);
     };
@@ -111,8 +111,8 @@ function EnhancedTableHead(props) {
         TableCell padding = "checkbox" >
         < /
         TableCell > {
-            headcells.map((headcell) => ( <
-                TableCell key = { headcell.id }
+            headers.map((header) => ( <
+                TableCell key = { header.id }
                 align = "right"
                 style={{flexDirection :"unset",
                         fontWeight:"600",
@@ -120,14 +120,14 @@ function EnhancedTableHead(props) {
                         textShadow:" 1px 1px 2px silver, 0 0 25px cyan",
                         fontFamily:"Samim"
                     }}
-                padding = { headcell.disablePadding ? 'none' : 'default' }
+                padding = { header.disablePadding ? 'none' : 'default' }
                 // sortDirection = { orderBy === headcell.id ? order : false }
                  >
                 <
-                TableSortLabel active = { orderBy === headcell.id }
-                direction = { orderBy === headcell.id ? order : 'asc' }
-                onClick = { createSortHandler(headcell.id) } > { headcell.label } {
-                    orderBy === headcell.id ? ( <
+                TableSortLabel active = { orderBy === header.id }
+                direction = { orderBy === header.id ? order : 'asc' }
+                onClick = { createSortHandler(header.id) } > { header.label } {
+                    orderBy === header.id ? ( <
                         span className = { classes.visuallyHidden } > { order === 'desc' ? 'sorted descending' : 'sorted ascending' } <
                         /span>
                     ) : null
@@ -324,7 +324,7 @@ const DataTable = props => {
             size = { dense ? 'small' : 'medium' }
             aria_label = "enhanced table" >
             <
-            EnhancedTableHead headcells={headers} classes = { classes }
+            EnhancedTableHead headers={headers} classes = { classes }
             numSelected = { selected.length }
             order = { order }
             orderBy = { orderBy }

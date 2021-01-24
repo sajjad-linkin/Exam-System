@@ -14,6 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import {Button,Badge} from 'antd' 
 
 const useRowStyles = makeStyles({
   root: {
@@ -32,8 +33,8 @@ function createData(name, calories, fat, carbs, protein, price) {
     protein,
     price,
     history: [
-      { date: '2020-01-05', customerId: '11091700', amount: 3 },
-      { date: '2020-01-02', customerId: 'Anonymous', amount: 1 },
+      { date: 'میانترم', customerId: '۱۳۹۹/۹/۲۰', amount: "پیش رو" , during:" ۸:۰۰ الی ۱۱:۰۰"},
+      { date: 'کوییز ۲۵ آبان', customerId: '۱۳۹۹/۸/۲۵', amount: "برگزار شده" , during:" ۸:۰۰ الی ۱۱:۰۰" },
     ],
   };
 }
@@ -52,13 +53,13 @@ function Row(props) {
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-        <TableCell align="right" component="th" scope="row">
+        <TableCell align="right" component="th" scope="row" style={{fontFamily:"Samim"}}>
           {row.name}
         </TableCell>
-        <TableCell align="right">{row.calories}</TableCell>
-        <TableCell align="right">{row.fat}</TableCell>
+        <TableCell align="right" style={{fontFamily:"Samim"}}>{row.calories}</TableCell>
+        {/* <TableCell align="right">{row.fat}</TableCell>
         <TableCell align="right">{row.carbs}</TableCell>
-        <TableCell align="right">{row.protein}</TableCell>
+        <TableCell align="right">{row.protein}</TableCell> */}
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -66,7 +67,8 @@ function Row(props) {
             <Box margin={1}>
               <Typography  style={{flexDirection :"unset",
                         fontWeight:"600",
-                        fontSize:"16px"}} align="right" variant="h6" gutterBottom component="div">
+                        fontSize:"16px" ,
+                        fontFamily:"Samim"}} align="right" variant="h6" gutterBottom component="div">
                     لیست آزمون ها
               </Typography>
               <Table size="small" aria-label="purchases">
@@ -76,6 +78,12 @@ function Row(props) {
             headcells.map((headcell) => ( <
                 TableCell key = { headcell.id }
                 align = "right"
+                style={{flexDirection :"unset",
+                fontWeight:"600",
+                fontSize:"13px",
+                textShadow:" 1px 1px 2px silver, 0 0 25px cyan",
+                fontFamily:"Samim"
+            }}
                 
                
                 // padding = { headcell.disablePadding ? 'none' : 'default' }
@@ -88,13 +96,17 @@ function Row(props) {
                 <TableBody>
                   {row.history.map((historyRow) => (
                     <TableRow key={historyRow.date}>
-                      <TableCell align="right" component="th" scope="row">
+                      <TableCell align="right" component="th" scope="row"  style={{fontFamily:"Samim"}}>
                         {historyRow.date}
                       </TableCell>
-                      <TableCell align="right">{historyRow.customerId}</TableCell>
-                      <TableCell align="right">{historyRow.amount}</TableCell>
-                      <TableCell align="right">
-                        {Math.round(historyRow.amount * row.price * 100) / 100}
+                      <TableCell align="right" style={{fontFamily:"Samim"}}>{historyRow.customerId}</TableCell>
+                      <TableCell align="right" style={{fontFamily:"Samim"}}>{historyRow.amount}</TableCell>
+                      <TableCell align="right" style={{fontFamily:"Samim"}}>{historyRow.during}</TableCell>
+                      <TableCell align="right" style={{fontFamily:"Samim"}}>
+                        
+                      <Badge count={"۳۴"} showZero >
+                        <Button type="primary" style={{borderRadius:"15px", fontSize:"10px" }}>مشاهده پاسخ ها </Button>
+                      </Badge>
                       </TableCell>
                     </TableRow>
                   ))}
@@ -127,11 +139,9 @@ Row.propTypes = {
 };
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 3.99),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 4.99),
-  createData('Eclair', 262, 16.0, 24, 6.0, 3.79),
-  createData('Cupcake', 305, 3.7, 67, 4.3, 2.5),
-  createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
+  createData('الگوریتم', 1234),
+  createData('کامپایلر',4321),
+  createData('هوش مصنوعی', 1234,)
 ];
 
 const CollapsibleTable = props=> {
@@ -149,8 +159,11 @@ const CollapsibleTable = props=> {
                 align = "right"
                 
                 style={{flexDirection :"unset",
-                        fontWeight:"600",
-                        fontSize:"16px"}}
+                fontWeight:"600",
+                fontSize:"16px",
+                textShadow:" 1px 1px 2px silver, 0 0 25px cyan",
+                fontFamily:"Samim"
+            }}
                 // padding = { headcell.disablePadding ? 'none' : 'default' }
                 // sortDirection = { orderBy === headcell.id ? order : false }
                  ><span>{ mainHeadcell.label}</span>
@@ -159,7 +172,7 @@ const CollapsibleTable = props=> {
              ) )}
           </TableRow>
         </TableHead>
-        <TableBody>
+        <TableBody  >
           {rows.map((row) => (
             <Row headcells={headcells} key={row.name} row={row} />
           ))}
