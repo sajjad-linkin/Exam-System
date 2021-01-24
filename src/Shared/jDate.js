@@ -1,9 +1,8 @@
 
-  export default class jDate {
-    constructor() {
-    }
+  export const jDate=()=> {
+    
 
-    transform(value) {
+    function transform(value) {
       if(value === null || value === undefined)
           return "نامعلوم";
       let date, time;
@@ -29,7 +28,7 @@
 
     }
 
-    getMonth(num){
+    function getMonth(num){
       switch (num) {
           case 1:
               return "فروردین";
@@ -60,7 +59,7 @@
       }
     }
 
-    jalali_to_gregorian(jy, jm, jd) {
+    function jalali_to_gregorian(jy, jm, jd) {
       let gy, gm, gd, days, sal_a, v;
 
       if(jy > 979){
@@ -93,7 +92,7 @@
         return [gy,gm,gd];
     }
 
-    gregorian_to_jalali(gy, gm, gd) {
+    function gregorian_to_jalali(gy, gm, gd) {
       let g_d_m, jy,jm,jd, gy2, days;
       //  sal_a, v;
 

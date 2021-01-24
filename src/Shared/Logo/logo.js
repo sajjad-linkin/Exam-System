@@ -5,7 +5,7 @@ import Logo from "../../assets/pics/test.png"
 
 
 
-function logo(){
+const logo=()=>{
 
     return(
     <Card className="logoCard" cover={<img src={Logo} className="circle"/> }  >

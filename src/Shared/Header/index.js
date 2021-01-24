@@ -1,5 +1,3 @@
-import AnalogClock from './AnalogClock';
-import * as ClockThemes from './themes';
+import Clock from './Clock';
 
-export const Themes = ClockThemes;
-export default AnalogClock;
+export default Clock;
